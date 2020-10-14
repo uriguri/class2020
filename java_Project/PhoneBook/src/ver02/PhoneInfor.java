@@ -3,7 +3,7 @@ package ver02;
 public class PhoneInfor {
 
 	/*
-	Version 0.1 전화번호 관리 프로그램. 
+	Version 0.2 전화번호 관리 프로그램. 
 		PhoneInfor 라는 이름의 클래스를 정의해 보자. 
 		클래스는 다음의 데이터들의 문자열 형태로 저장이 가능 해야 하며, 
 		저장된 데이터의 적절한 출력이 가능하도록 메소드 정의

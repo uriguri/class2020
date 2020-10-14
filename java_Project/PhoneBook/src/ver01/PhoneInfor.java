@@ -34,10 +34,11 @@ public class PhoneInfor {
 	
 	// 저장된 데이터의 적절한 출력 메서드
 	void showInfor() {
+		System.out.println("================");
 		System.out.println("이름 : " + name);
 		System.out.println("전화번호 : " + phoneNumber);
 		System.out.println("생일 : " + birthday);
-		
+		System.out.println("================");
 //		if(birthday == null) {
 //		System.out.println("생일 : " + "입력 데이터 없음");
 //		} else {
