@@ -17,8 +17,6 @@ public class FruitSalesMain1 {
 		// FruitBuyer 타입의 참조변수 선언과 초기화 (한번에 처리)
 		FruitBuyer buyer = new FruitBuyer();
 		
-		
-		
 		// 사과를 구매 : 2000 지불
 		buyer.buyApple(seller, 2000);
 		
