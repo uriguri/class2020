@@ -7,8 +7,7 @@ public class Product { // 눈에 보이지않지만 extends Object가 숨어있�
 	
 	// 생성자
 	public Product(int price) {
-		// super(); // 그래서 super가 등장함 (Object)때문에 생략해도 됨
-		
+		// super(); // 그래서 super가 (등장함 -> Object 때문에) 생략해도 됨
 		this.price = price;
 		this.bonusPoint = price/10; //or (int)(price*0.1f);
 	}
