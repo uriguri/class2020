@@ -2,7 +2,7 @@ package ver06;
 
 import ver03.Util;
 
-public class PhoneBookManager {
+public class PhoneBookManager { 
 	
 	// 전화번호 정보를 저장 할 배열을 가지고,
 	// 배열을 이용한 정보의 저장, 삭제, 출력을 하는 기능

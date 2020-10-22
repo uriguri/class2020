@@ -38,6 +38,7 @@ public class PhoneBookMain {
 				break;
 				
 			case Menu.DELETE:
+				manager.deleteInfor();
 				break;
 				
 			case Menu.DISPLAY_ALL:

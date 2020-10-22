@@ -46,7 +46,7 @@ public class UnivPhoneInfor extends PhoneInfor {
 
 	@Override
 	public void showBasicInfor() {
-		super.showInfor();
+		super.showBasicInfor();
 	}
 	
 	

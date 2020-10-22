@@ -66,7 +66,10 @@ public abstract class PhoneInfor implements Infor {
 	}
 	
 	// 추상메서드 showBasicInfor() 멤버로 가진다.
-	
-	
+	@Override
+	public void showBasicInfor() {
+		System.out.println("이름 : " + getName());
+		System.out.println("전화 : " + getPhoneNum());
+	}
 	
 }

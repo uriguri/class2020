@@ -36,7 +36,7 @@ public class PhoneBookManager {
 	}
 	
 	// 전화번호 정보를 인스턴스 생성하고 배열에 저장
-	void insertInfor() {
+	public void insertInfor() {
 		
 		System.out.println(" 어떤 정보를 입력하시겠습니까? ");
 		// System.out.println(" 1. 기본 "); // 추상클래스 -> 인스턴스 생성불가

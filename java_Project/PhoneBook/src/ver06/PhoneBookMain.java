@@ -1,19 +1,20 @@
 package ver06;
 
-import java.util.InputMismatchException;
+import java.util.Scanner;
 
 import ver03.Util;
+import ver05.Menu;
+import ver05.PhoneBookManager;
 
 public class PhoneBookMain {
 
 	public static void main(String[] args) {
 	
-		//PhoneBookManager manager = new PhoneBookManager(100);
+	//PhoneBookManager manager = new PhoneBookManager(100);
 		
 		PhoneBookManager manager = PhoneBookManager.getInstance();
 		
-		
-while(true) {
+		while(true) {
 			System.out.println("메뉴를 입력해주세요. ==================");
 			System.out.println(Menu.INSERT + ". 저장 ");
 			System.out.println(Menu.SEARCH + ". 검색 ");
@@ -24,16 +25,14 @@ while(true) {
 			System.out.println("\n>> ");
 			
 			int select = Util.sc.nextInt();
-		
+			
 			// 메뉴 번호외 숫자를 입력했을때 예외처리
 			if(!(select>0 && select<6)) {
-			System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
-			continue;
+				System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
+				continue;
 			}
-				
+			
 			switch (select) {
-			
-			
 			case Menu.INSERT:
 				manager.insertInfor();
 				break;
@@ -54,8 +53,9 @@ while(true) {
 				return;
 			}
 			
-}	
-		
+		}
+
+
 
 
 

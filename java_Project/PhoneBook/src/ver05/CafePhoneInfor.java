@@ -44,7 +44,7 @@ public class CafePhoneInfor extends PhoneInfor {
 	
 	@Override
 	public void showBasicInfor() {
-		super.showInfor();
+		super.showBasicInfor();
 	}
 	
 
