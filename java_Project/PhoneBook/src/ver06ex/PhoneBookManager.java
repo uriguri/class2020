@@ -1,10 +1,8 @@
-package ver05;
-
-import java.util.InputMismatchException;
+package ver06ex;
 
 import ver03.Util;
 
-public class PhoneBookManager {
+public class PhoneBookManager { 
 	
 	// 전화번호 정보를 저장 할 배열을 가지고,
 	// 배열을 이용한 정보의 저장, 삭제, 출력을 하는 기능
@@ -38,10 +36,7 @@ public class PhoneBookManager {
 	}
 	
 	// 전화번호 정보를 인스턴스 생성하고 배열에 저장
-	public void insertInfor() {
-	
-		
-	while(true) {		//ver 0.6 예외처리시 다시 반복할 수 있도록 무한루프 만듦.
+	void insertInfor() {
 		
 		System.out.println(" 어떤 정보를 입력하시겠습니까? ");
 		// System.out.println(" 1. 기본 "); // 추상클래스 -> 인스턴스 생성불가
@@ -49,12 +44,9 @@ public class PhoneBookManager {
 		System.out.println(Menu.COM + ". 회사 ");
 		System.out.println(Menu.CAFE + ". 동호회 ");
 		
-		int select = 0;
 		
-		//ver 0.6 예외처리 추가.
-	try {
-		select = Util.sc.nextInt();
-		
+		int select = Util.sc.nextInt();
+
 		Util.sc.nextLine();
 		
 		if( !(select>0 && select<5) ) {
@@ -63,11 +55,6 @@ public class PhoneBookManager {
 			return;
 		}
 		
-	} catch (InputMismatchException e) {
-		System.out.println("숫자만 입력해주세요!!!!!!       \n다시입력해주세요>>");
-		Util.sc.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
-		continue;
-	}
 		System.out.println(" 입력을 시작합니다. ");
 		System.out.println(" 이름 >> ");
 		String name = Util.sc.nextLine();
@@ -77,7 +64,7 @@ public class PhoneBookManager {
 		String addr = Util.sc.nextLine();
 		System.out.println(" 이메일 >> ");
 		String email = Util.sc.nextLine();
-		
+
 		switch(select) {
 //		case 1 : 
 //			// 인스턴스 생성 -> 배열에 저장
@@ -120,11 +107,9 @@ public class PhoneBookManager {
 		default :
 			
 		}
-		break;	//예외처리경우는 catch로 빠지고
-				//제대로 입력이 되면 break를 걸어서 메인메뉴로 빠지도록 함.
-	}	
+		
 	}
-	
+		
 	// 정보 검색
 	// 배열의 index를 찾는 메서드
 	private int searchIndex(String name) {

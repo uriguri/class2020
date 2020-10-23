@@ -1,4 +1,4 @@
-package ver06;
+package ver06ex;
 
 import java.util.InputMismatchException;
 
