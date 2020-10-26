@@ -2,23 +2,17 @@ package ver06;
 
 import java.util.InputMismatchException;
 
-//	0.6ver 추가내용
-//		ArrayList<T>를 사용해 배열을 저장
-//		사용자 메뉴 입력시 예외처리를 해봅시다.
-
 import ver03.Util;
-import ver05.Menu;
-import ver05.PhoneBookManager;
 
-public class PhoneBookMain {
+public class PhoneBookMain implements Util {
 
 	public static void main(String[] args) {
 	
-	//PhoneBookManager manager = new PhoneBookManager(100);
+		//PhoneBookManager manager = new PhoneBookManager(100);
 		
 		PhoneBookManager manager = PhoneBookManager.getInstance();
 		
-	while(true) {
+		while(true) {
 			System.out.println("메뉴를 입력해주세요. ==================");
 			System.out.println(Menu.INSERT + ". 저장 ");
 			System.out.println(Menu.SEARCH + ". 검색 ");
@@ -28,22 +22,31 @@ public class PhoneBookMain {
 			
 			System.out.println("\n>> ");
 			
-			int select = 0; // try-catch 사용을 위해 새로 초기화 
+			int select = 0;
 			
-		try {
-			select = Util.sc.nextInt();
+			try {
 			
-			// 메뉴 번호외 숫자를 입력했을때 예외처리
-			if(!(select>0 && select<6)) {
+				select = SC.nextInt();
+				SC.nextLine();
+	
+			
+				// 메뉴 번호외 숫자를 입력했을때 예외처리
+				if(!(select>0 && select<6)) {
 				System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
+//				Exception e = new Exception("잘못된 메뉴 입력");
+				BadInputException e = new BadInputException(String.valueOf(select));
+				throw e;
+			}
+			} catch (InputMismatchException | BadInputException e) {
+				System.out.println("메뉴입력이 잘못되었습니다.");
+				SC.nextLine();
+				continue;
+			} catch (Exception e1) {
+				System.out.println("메뉴입력이 잘못되었습니다.");
+				SC.nextLine();
 				continue;
 			}
-		} catch (InputMismatchException e) { // 문자 입력시 나오는 에러를 캐치.
-			System.out.println("숫자를 입력해주세요!!! \n >>다시 선택해주세요.");
-			Util.sc.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
-			continue;
-		}
-		
+			
 			switch (select) {
 			case Menu.INSERT:
 				manager.insertInfor();
@@ -68,10 +71,8 @@ public class PhoneBookMain {
 			
 		}
 
-
-
-
-
-
+		
+		
+		
 	}
 }

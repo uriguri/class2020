@@ -1,6 +1,6 @@
 package ver03;
 
-public class PhoneBookMain {
+public class PhoneBookMain implements Util {
 
 	public static void main(String[] args) {
 		
@@ -24,7 +24,7 @@ public class PhoneBookMain {
 		System.out.println(" 5. 프로그램 종료");
 		System.out.println("========================");
 		
-		char insertMenu = Util.sc.nextLine().charAt(0);	//메뉴 선택을위한 코드
+		char insertMenu = SC.nextLine().charAt(0);	//메뉴 선택을위한 코드
 		
 		switch(insertMenu) {
 			case '1' :

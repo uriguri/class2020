@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 import ver03.Util;
 
-public class PhoneBookManager {
+public class PhoneBookManager implements Util{
 	
 	// 전화번호 정보를 저장 할 배열을 가지고,
 	// 배열을 이용한 정보의 저장, 삭제, 출력을 하는 기능
@@ -53,9 +53,9 @@ public class PhoneBookManager {
 		
 		//ver 0.6 예외처리 추가.
 	try {
-		select = Util.sc.nextInt();
+		select = SC.nextInt();
 		
-		Util.sc.nextLine();
+		SC.nextLine();
 		
 		if( !(select>0 && select<5) ) {
 			System.out.println("메뉴 선택이 옳바르지 않습니다.");
@@ -65,18 +65,18 @@ public class PhoneBookManager {
 		
 	} catch (InputMismatchException e) {
 		System.out.println("숫자만 입력해주세요!!!!!!       \n다시입력해주세요>>");
-		Util.sc.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
+		SC.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
 		continue;
 	}
 		System.out.println(" 입력을 시작합니다. ");
 		System.out.println(" 이름 >> ");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		System.out.println(" 전화번호 >> ");
-		String pNum = Util.sc.nextLine();
+		String pNum = SC.nextLine();
 		System.out.println(" 주소 >> ");
-		String addr = Util.sc.nextLine();
+		String addr = SC.nextLine();
 		System.out.println(" 이메일 >> ");
-		String email = Util.sc.nextLine();
+		String email = SC.nextLine();
 		
 		switch(select) {
 //		case 1 : 
@@ -88,10 +88,10 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 전공, 학년
 			System.out.println(" 전공 >> ");
-			String major = Util.sc.nextLine();
+			String major = SC.nextLine();
 			
 			System.out.println(" 학년 >> ");
-			int grade = Util.sc.nextInt();
+			int grade = SC.nextInt();
 			
 			addInfor(new UnivPhoneInfor(name, pNum, addr, email, major, grade));
 			break;
@@ -100,7 +100,7 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 회사이름
 			System.out.println(" 회사 이름 >> ");
-			String company = Util.sc.nextLine();
+			String company = SC.nextLine();
 			
 			addInfor(new CompanyPhoneInfor(name, pNum, addr, email, company));
 			break;
@@ -109,10 +109,10 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 동호회이름, 닉네임
 			System.out.println(" 동호회 이름 >> ");
-			String cafeName = Util.sc.nextLine();
+			String cafeName = SC.nextLine();
 			
 			System.out.println(" 닉네임 >> ");
-			String nickName = Util.sc.nextLine();
+			String nickName = SC.nextLine();
 			
 			addInfor(new CafePhoneInfor(name, pNum, addr, email, cafeName, nickName));
 			break;
@@ -142,9 +142,9 @@ public class PhoneBookManager {
 	// 해당 index의 참조변수로 정보 출력 : 사용자가 입력한 이름으로 검색
 	public void searchInfor() {
 
-		Util.sc.nextLine();
+		SC.nextLine();
 		System.out.println("검색하실 이름을 입력해주세요.");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		
 		int index = searchIndex(name);
 		
@@ -161,10 +161,10 @@ public class PhoneBookManager {
 	// 삭제되상이 되도록 변경해주는 것 index를 이용하여서.
 	public void deleteInfor() {
 		
-		Util.sc.nextLine();
+		SC.nextLine();
 		
 		System.out.println("삭제하고자 하는 정보의 이름을 입력해주세요.");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		
 		int index = searchIndex(name);
 		

@@ -1,8 +1,11 @@
 package ver05;
 
-import ver03.Util;
+import java.util.InputMismatchException;
 
-public class PhoneBookMain {
+import ver03.Util;
+import ver06.BadInputException;
+
+public class PhoneBookMain implements Util{
 
 	public static void main(String[] args) {
 	
@@ -20,14 +23,21 @@ public class PhoneBookMain {
 			
 			System.out.println("\n>> ");
 			
-			int select = Util.sc.nextInt();
+			int select = 0;
+			
+			try {
+			select = SC.nextInt();
 			
 			// 메뉴 번호외 숫자를 입력했을때 예외처리
 			if(!(select>0 && select<6)) {
 				System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
-				continue;
+				BadInputException e = new BadInputException(String.valueOf(select));
+				throw e;
 			}
-			
+			} catch (InputMismatchException | BadInputException e) {
+				System.out.println("똑바로 입력하세요 다시 입력하세요.");
+				SC.nextLine();
+			}
 			switch (select) {
 			case Menu.INSERT:
 				manager.insertInfor();

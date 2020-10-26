@@ -1,6 +1,6 @@
 package ver03;
 
-public class PhoneBookManager {
+public class PhoneBookManager implements Util {
 
 	// 배열 : 전화번호 정보(이름,전화번호,생일)을 저장하는 목적
 	
@@ -35,15 +35,15 @@ public class PhoneBookManager {
 
 		// 이름 입력 받기
 		System.out.println("이름을 입력해주세요. : ");
-		String name = Util.sc.nextLine().trim();
+		String name = SC.nextLine().trim();
 		
 		// 전화번호 받기
 		System.out.println("전화번호를 입력해주세요 : ");
-		String pNum = Util.sc.nextLine().trim();
+		String pNum = SC.nextLine().trim();
 		
 		// 생일 받기
 		System.out.println("생일 정보를 입력해주세요 : ");
-		String birthday = Util.sc.nextLine().trim();
+		String birthday = SC.nextLine().trim();
 		
 		
 		// 배열에 저장하기 위한 인스턴스의 참조변수 선언
@@ -77,7 +77,7 @@ public class PhoneBookManager {
 		// 찾고자 하는 이름을 받는다.
 		System.out.println("정보 검색을 시작합니다.");
 		System.out.println("찾고자 하는 이름을 입력해주세요. :");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		
 		// 이름으로 요소 index 검색
 		int index = searchIndex(name);
@@ -137,7 +137,7 @@ public class PhoneBookManager {
 		
 		System.out.println("정보 삭제를 진행합니다.");
 		System.out.println("삭제 하고자 하는 정보의 이름을 입력해주세요.");
-		String name = Util.sc.nextLine();
+		String name = SC..nextLine();
 		
 		// 이름으로 요소 index 검색
 		int index = searchIndex(name);
