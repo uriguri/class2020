@@ -137,7 +137,7 @@ public class PhoneBookManager implements Util {
 		
 		System.out.println("정보 삭제를 진행합니다.");
 		System.out.println("삭제 하고자 하는 정보의 이름을 입력해주세요.");
-		String name = SC..nextLine();
+		String name = SC.nextLine();
 		
 		// 이름으로 요소 index 검색
 		int index = searchIndex(name);

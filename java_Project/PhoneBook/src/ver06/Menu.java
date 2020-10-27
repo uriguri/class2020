@@ -7,7 +7,8 @@ public interface Menu {
 	int SEARCH = 2;
 	int DELETE = 3;
 	int DISPLAY_ALL = 4;
-	int EXIT = 5;
+	int SAVE = 5;
+	int EXIT = 6;
 	
 	int UNIV = 1;
 	int COM = 2;

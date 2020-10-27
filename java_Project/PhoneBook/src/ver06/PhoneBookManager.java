@@ -1,10 +1,17 @@
 package ver06;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
 import ver03.Util;
+import ver06ex.PhoneInfor;
 
 public class PhoneBookManager implements Util{
 	
@@ -26,6 +33,8 @@ public class PhoneBookManager implements Util{
 		
 		// List<PhoneInfor> 초기화 
 		pBook = new ArrayList<PhoneInfor>();
+		// 파일에서 인스턴스들을 로드
+		load();
 	}
 	
 	// 내부에서 인스턴스 생성
@@ -44,7 +53,6 @@ public class PhoneBookManager implements Util{
 	// 배열에 전화번호 정보를 저장하는 메서드
 	private void addInfor(PhoneInfor infor) {
 		//pBook[cnt++] = infor;
-		
 		//List에 정보 저장
 		pBook.add(infor);
 	}
@@ -120,6 +128,7 @@ public class PhoneBookManager implements Util{
 			int grade = SC.nextInt();
 			
 			addInfor(new UnivPhoneInfor(name, pNum, addr, email, major, grade));
+			
 			break;
 			
 		case Menu.COM : 
@@ -128,7 +137,7 @@ public class PhoneBookManager implements Util{
 			System.out.println(" 회사 이름 >> ");
 			String company = SC.nextLine();
 			
-			addInfor(new CompanyPhoneInfor(name, pNum, addr, email, company));
+			addInfor (new CompanyPhoneInfor(name, pNum, addr, email, company));
 			break;
 			
 		case Menu.CAFE : 
@@ -143,7 +152,6 @@ public class PhoneBookManager implements Util{
 			addInfor(new CafePhoneInfor(name, pNum, addr, email, cafeName, nickName));
 			break;
 			
-		default :
 			
 		}
 		break;	//예외처리경우는 catch로 빠지고
@@ -152,6 +160,7 @@ public class PhoneBookManager implements Util{
 	System.out.println("입력하신 저옵가 저장되었습니다.(저장개수 : "+pBook.size());
 	}
 	
+
 	// 정보 검색
 	// 배열의 index를 찾는 메서드
 	
@@ -223,6 +232,57 @@ public class PhoneBookManager implements Util{
 		}
 	}
 	
+	// List : pBook 에 저장되어 있는 인스턴스를 저장
+		public void save() {
+			
+			if(pBook.size()==0) {
+				System.out.println("저장된 데이터가 없어 파일의 저장이 되지 않습니다.");
+			}
+			// 인스턴스를 저장할 수 있는 출력 스트림 생성
+			try {
+				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("phonebook.ser"));
+//				for(PhoneInfor pi : pBook) {
+//					out.writeObject(pi);
+//				}
+				out.writeObject(pBook);
+				out.close();
+				System.out.println("저장되었습니다. (phonebook.ser)");
+			} catch (IOException e) {
+				System.out.println("저장하는 과정에 오류가 발생했습니다. ("+e.getMessage()+"\n 다시 시도해주세요.");
+			}
+		}
+		// 프로그램으로 파일의 저장 데이터를 로드 
+		void load() {
+			// 파일의 존재여부 확인 : File
+			File file = new File("phonebook.ser");
+			if(!file.exists()) {
+				System.out.println("저장된 파일이 존재하지 않습니다. 파일 저장 후 Load됩니다.");
+				return;
+			}
+			
+			// 파일에 있는 데이터를 메모리에 저장한다. : pBook에 저장
+			// 파일의 데이터를 읽을 수 있는 스트림 생성
+			try {
+				ObjectInputStream in = new ObjectInputStream(new FileInputStream("phonebook.ser"));
+				
+//				while(true) {
+//					Object obj = in.readObject();
+//					if(obj==null) {
+//						break;
+//					}
+//					pBook.add((PhoneInfor) obj);
+//				}
+				pBook = (List<PhoneInfor>) in.readObject();
+				System.out.println("데이터 로드 완료.......");
+			} catch (IOException e) {
+				//System.out.println("데이터를 로드하는 과정에 오류가 발생했습니다.");
+			} catch (ClassNotFoundException e) {
+				System.out.println("데이터를 로드하는 과정에 오류가 발생했습니다.");
+				e.printStackTrace();
+			}
+			
+			
+		}
 	
 	
 	

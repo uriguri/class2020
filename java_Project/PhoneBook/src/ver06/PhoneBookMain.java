@@ -18,6 +18,7 @@ public class PhoneBookMain implements Util {
 			System.out.println(Menu.SEARCH + ". 검색 ");
 			System.out.println(Menu.DELETE + ". 삭제 ");
 			System.out.println(Menu.DISPLAY_ALL + ". 모든 정보 출력 ");
+			System.out.println(Menu.SAVE + ". 파일 저장");
 			System.out.println(Menu.EXIT + ". EXIT ");
 			
 			System.out.println("\n>> ");
@@ -62,6 +63,10 @@ public class PhoneBookMain implements Util {
 				
 			case Menu.DISPLAY_ALL:
 				manager.showAllInfor();
+				break;
+				
+			case Menu.SAVE:
+				manager.save();
 				break;
 				
 			case Menu.EXIT:

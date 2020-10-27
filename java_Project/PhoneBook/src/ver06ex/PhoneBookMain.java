@@ -1,12 +1,12 @@
 package ver06ex;
 
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 //	0.6ver 추가내용
 //		ArrayList<T>를 사용해 배열을 저장
 //		사용자 메뉴 입력시 예외처리를 해봅시다.
 
-import ver03.Util;
 import ver05.Menu;
 import ver05.PhoneBookManager;
 
@@ -29,9 +29,11 @@ public class PhoneBookMain {
 			System.out.println("\n>> ");
 			
 			int select = 0; // try-catch 사용을 위해 새로 초기화 
-			
+			Scanner SC = new Scanner(System.in);
 		try {
-			select = Util.sc.nextInt();
+			
+			
+			select = SC.nextInt();
 			
 			// 메뉴 번호외 숫자를 입력했을때 예외처리
 			if(!(select>0 && select<6)) {
@@ -40,7 +42,7 @@ public class PhoneBookMain {
 			}
 		} catch (InputMismatchException e) { // 문자 입력시 나오는 에러를 캐치.
 			System.out.println("숫자를 입력해주세요!!! \n >>다시 선택해주세요.");
-			Util.sc.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
+			SC.nextLine(); // 공백으로 들어와서 무한루프 도는걸 막아줌.
 			continue;
 		}
 		

@@ -1,6 +1,9 @@
 package ver06ex;
 
-import ver03.Util;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 public class PhoneBookManager { 
 	
@@ -45,9 +48,9 @@ public class PhoneBookManager {
 		System.out.println(Menu.CAFE + ". 동호회 ");
 		
 		
-		int select = Util.sc.nextInt();
+		int select = SC.nextInt();
 
-		Util.sc.nextLine();
+		SC.nextLine();
 		
 		if( !(select>0 && select<5) ) {
 			System.out.println("메뉴 선택이 옳바르지 않습니다.");
@@ -57,13 +60,13 @@ public class PhoneBookManager {
 		
 		System.out.println(" 입력을 시작합니다. ");
 		System.out.println(" 이름 >> ");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		System.out.println(" 전화번호 >> ");
-		String pNum = Util.sc.nextLine();
+		String pNum = SC.nextLine();
 		System.out.println(" 주소 >> ");
-		String addr = Util.sc.nextLine();
+		String addr = SC.nextLine();
 		System.out.println(" 이메일 >> ");
-		String email = Util.sc.nextLine();
+		String email = SC.nextLine();
 
 		switch(select) {
 //		case 1 : 
@@ -75,10 +78,10 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 전공, 학년
 			System.out.println(" 전공 >> ");
-			String major = Util.sc.nextLine();
+			String major = SC.nextLine();
 			
 			System.out.println(" 학년 >> ");
-			int grade = Util.sc.nextInt();
+			int grade = SC.nextInt();
 			
 			addInfor(new UnivPhoneInfor(name, pNum, addr, email, major, grade));
 			break;
@@ -87,7 +90,7 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 회사이름
 			System.out.println(" 회사 이름 >> ");
-			String company = Util.sc.nextLine();
+			String company = SC.nextLine();
 			
 			addInfor(new CompanyPhoneInfor(name, pNum, addr, email, company));
 			break;
@@ -96,10 +99,10 @@ public class PhoneBookManager {
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
 			// 동호회이름, 닉네임
 			System.out.println(" 동호회 이름 >> ");
-			String cafeName = Util.sc.nextLine();
+			String cafeName = SC.nextLine();
 			
 			System.out.println(" 닉네임 >> ");
-			String nickName = Util.sc.nextLine();
+			String nickName = SC.nextLine();
 			
 			addInfor(new CafePhoneInfor(name, pNum, addr, email, cafeName, nickName));
 			break;
@@ -124,12 +127,13 @@ public class PhoneBookManager {
 		return index;
 	}
 
+	Scanner SC = new Scanner(System.in);
 	// 해당 index의 참조변수로 정보 출력 : 사용자가 입력한 이름으로 검색
 	public void searchInfor() {
 
-		Util.sc.nextLine();
+		SC.nextLine();
 		System.out.println("검색하실 이름을 입력해주세요.");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		
 		int index = searchIndex(name);
 		
@@ -146,10 +150,10 @@ public class PhoneBookManager {
 	// 삭제되상이 되도록 변경해주는 것 index를 이용하여서.
 	public void deleteInfor() {
 		
-		Util.sc.nextLine();
+		SC.nextLine();
 		
 		System.out.println("삭제하고자 하는 정보의 이름을 입력해주세요.");
-		String name = Util.sc.nextLine();
+		String name = SC.nextLine();
 		
 		int index = searchIndex(name);
 		
