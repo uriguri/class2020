@@ -158,8 +158,44 @@ public class PhoneBookManager {
 		if(index<0) {
 			System.out.println("삭제 할 데이터가 존재하지 않습니다.");
 		} else {
-			
+			for(int i=index; i<cnt-1; i++) {
+				phoneBook[i]=phoneBook[i+1];
+			}
+			cnt--;
+			System.out.println("정보를 삭제 했습니다.");
 		}
 		
 	}
+	
+	void showAll() {
+		
+		if(cnt==0) {
+			System.out.println("저장된 정보가 없습니다.");
+			return;
+		}
+		
+		System.out.println("전체 정보를 출력합니다." + cnt +"개");
+		System.out.println("=====================");
+		for(int i=0; i<cnt; i++) {
+			phoneBook[i].showPhoneInfor();
+			System.out.println("=====================");
+		}
+	}
+	
 }
+
+/*
+ 	// 이름 문자열을 받아서 배열의 정보와 비교하고 index를 찾아서 반환하는 메서드
+	int searchIndex(String name) {
+		int result=-1; //찾고자하는 정보가 없을때 분기해주기위해 -1로 설정
+	// 검색 : index를 찾는다
+	for(int i=0; i<cnt; i++) {
+		if(phoneBook[i].name.equals(name)) {
+			result=i;
+			break;
+		}
+	}
+		return result;
+	}
+*/ 
+ 
