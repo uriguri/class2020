@@ -123,3 +123,82 @@ select ename, deptno, job
 from emp
 where deptno=10 and job='MANAGER'
 ;
+
+-- 10번 부서에 소속된 사원이거나 직급이 MANAGER인 사람을 검색하여 사원명, 부서번호, 직급을 출력합시다.
+-- [조건1] 10번 부서 소속인 사원 : DEPTNO=10
+-- [조건2] 직급이 MANAGER인 사원 : JOB='MANAGER'
+SELECT ename, deptno, job
+from emp
+where deptno=10 or job='MANAGER'
+;
+
+-- 부서번호가 10번이 아닌 사원의 
+-- 사원이름, 부서번호, 직급을 출력해 봅시다.
+select ename, deptno, job
+from emp
+-- where not deptno = 10
+-- where deptno != 10
+where deptno<>10
+;
+
+-- 2000에서 3000 사이의 급여를 받는 사원을 조회하기
+select ename, sal
+from emp
+-- where sal >= 2000 and sal <= 3000
+where sal between 2000 and 3000
+;
+
+-- 1987년에 입사한 사원을 출력해 봅시다.
+-- 1987/01/01 ~ 1987/12/31
+select *
+from emp
+-- where hiredate between '1987/01/01' and '1987/12/31'
+where hiredate >= '1987/01/01' and hiredate <= '1987/12/31'
+;
+
+-- 이번에는 커미션이 300 이거나 500 이거나 1400인 사원을 검색하자
+select *
+from emp
+-- where comm = 300 or comm = 500 or comm = 1400 or comm = 1000 or comm = 3000
+where comm in(300, 500, 1400, 1000, 3000)
+;
+
+-- 찾으려는 이름이 F로 시작 하는 것은 알지만 그 뒤의 문자는 모를 경우 
+select *
+from emp
+-- where ename like 'F%'   -- F로 시작하고 뒤에는 어떤 문자가 와도 상관 없다.
+-- where ename like '%S'   -- S로 끝나는 이름을 찾아봄
+-- where ename like '%AD%' -- 이름에 A문자를 포함하는 이름을 검색
+-- where ename like '_A%'  -- 첫 번째 문자는 어떤 문자든 상관 없고 두 번째 문자는 반드시 A 문자를 포함하는
+-- where ename like '__R%'    -- 첫 번째, 두 번째 문자에는 어떤 문자이든 상관없고, 세 번째에는 R문자를 포함하는 
+-- 000000-1000000 '_______1%'
+-- '1987/12/19' -> '_____12%'
+
+where ename not like '%A%'
+;
+
+-- 커미션을 받지 않는 사원을 검색
+select *
+from emp
+-- where comm = null -- 결과값 X
+where comm is null 
+;
+
+-- 커미션을 받는 사원을 검색
+select *
+from emp
+where comm is not null and comm>0
+;
+
+
+-- 사원의 리스트를
+-- 급여의 오름차순으로 정렬해보자
+Select *
+from emp
+-- order by sal asc -- 오름 차순
+-- drder by sal desc -- 내림 차순
+-- order by sal -- 생략 -> ASC 오름 차순 
+-- order by ename desc
+-- order by hiredate -- 날짜의 작다 표현은 오래된 날짜 : 오름차순은 오래된 날짜부터 최근 날짜로 정렬
+order by hiredate desc, sal asc
+;
