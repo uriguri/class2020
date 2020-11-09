@@ -51,7 +51,7 @@ public class PhoneBookManager implements Util{
 	//		입력의 구분 -> 구분에 따라 /인스턴스 생성도 구분 -> addInfor()메서드를 이용해서 정보를 저장
 	
 	// 배열에 전화번호 정보를 저장하는 메서드
-	private void addInfor(PhoneInfor infor) {
+	public void addInfor(PhoneInfor infor) {
 		//pBook[cnt++] = infor;
 		//List에 정보 저장
 		pBook.add(infor);
