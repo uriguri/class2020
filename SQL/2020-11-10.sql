@@ -224,3 +224,58 @@ select * from book;
 
 desc customer;
 select * from customer;
+
+desc orders;
+select * from orders;
+
+select bookname
+from book
+where bookid = 1
+;
+
+SELECT name, address
+FROM customer
+;
+
+SELECT ename, empno
+FROM emp
+WHERE MOD(empno ,2) = 0
+;
+
+SELECT TO_CHAR(hiredate, 'YY.MM.DY')
+FROM emp
+;
+
+SELECT TRUNC(sysdate - TO_DATE('2020-01-01', 'YY-MM-DD'))
+FROM dual
+;
+
+SELECT NVL(mgr, 0)
+FROM emp
+;
+
+SELECT ename, job, sal,
+    decode(job,
+        'CLERK', sal+100,
+        'MANAGER', sal+150,
+        'SALESMAN', sal+180,
+        'ANALIST', sal+200
+    ) AS upsal
+FROM emp
+;
+
+SELECT job, max(sal), min(sal), sum(sal), round(avg(sal))
+FROM emp
+group by job
+order by job
+;
+
+select job, count(*)
+from emp
+group by job
+order by job
+;
+
+select count(mgr)
+from emp
+;

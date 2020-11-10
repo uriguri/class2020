@@ -145,7 +145,7 @@ where deptno<>10
 select ename, sal
 from emp
 -- where sal >= 2000 and sal <= 3000
-where sal between 2000 and 3000
+where sal between 2000 and 3000 
 ;
 
 -- 1987년에 입사한 사원을 출력해 봅시다.
