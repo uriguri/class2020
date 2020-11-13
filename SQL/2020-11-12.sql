@@ -421,3 +421,5 @@ WHERE empno IN(SELECT NVL(mgr,0) FROM emp)
 SELECT ename, NVL(mgr,0)
 FROM emp
 ;
+
+
