@@ -129,3 +129,9 @@ WHERE idx=2
 -- 자식테이블의 행부터 삭제 하고 부모 테이블 행을 삭제
 DELETE FROM phoneInfo_com WHERE fr_ref=4;
 DELETE FROM phoneInfo_basic WHERE idx=4;
+
+
+-- 전체회원의 출력
+SELECT * 
+FROM phoneInfo_basic pb, phoneInfo_univ pu, phoneInfo_com pc
+;
