@@ -1,0 +1,286 @@
+<!DOCTYPE html> <!-- HTML5 문서임을 정의 -->
+
+<html lang="ko"> <!-- HTML 문서 시작 작성하는 언어 정의 -->
+
+    <head>
+        <!-- HTML의 정보를 정의 -->
+        <title>First HTML5</title> <!-- 웹 문서의 제목 -->
+        <meta charset="utf-8"> <!-- 문서의 속성 -->
+        <style>
+            h1 {
+                background-color: aliceblue;
+                color: cadetblue;
+            }
+            
+            h2 {
+                background-color:aquamarine;
+                color:blueviolet;
+            }
+            
+            div {
+                background-color:aquamarine
+            }
+            
+            span{
+                background-color:cadetblue
+            }
+            
+            
+        </style> <!-- 웹 문서의 요소들의 스타일로 정의 -->
+        <script>
+           //alert('안녕하세요');
+        </script> <!-- 자바스크립트 정의 -->
+    </head>
+
+    <body>
+        
+        <h3 id="top">INDEX</h3>
+        
+        
+        <ol>
+            <li> <a href="http://www.naver.com">Naver</a></li>
+            <li><a href="#tag-1">Heading Tag</a></li>
+            <li><a href="http://192.168.0.35">link</a></li>
+            <li> <a href="#tag-2">P tag</a></li>
+            <li> <a href="#tag-3">br tag</a></li>
+            <li> <a href="#tag-4">List tag</a></li>
+            <li> <a href="#tag-5">Table tag</a></li>
+            <li> <a href="#tag-6">img tag</a></li>
+            <li> <a href="#tag-7">공간분할 tag</a></li>
+        </ol>
+        
+        <hr>
+        
+        <h1>form tag</h1>
+        <form action="#" method="get">
+            
+           아이디 <input type="text" name="userid" value="value"><br>
+            이름 <input type="text" name="username" value="value"><br>
+        비밀번호 <input type="password" name="pw" value="value"><br>
+                <input type="file" name="file"><br>
+                ok?<input type="checkbox" name="ok"><br>
+                A<input type="radio" name="choice" value="A"><br>
+                B<input type="radio" name="choice" value="B"><br>
+                C<input type="radio" name="choice" value="C"><br>
+                
+                <input type="submit" value="서버로 전송">
+        
+        </form>
+        
+        
+        
+        <h1 id="tag-7"> 공간 분할 tag </h1>
+        <div> DIV DIV DIV DIV DIV DIV DIV DIV </div>
+        <span>span span span span</span><span>span span span span</span><div> DIV DIV DIV DIV DIV DIV DIV DIV </div>
+        
+        
+        
+        
+        
+        <h1 id="tag-6">Img tag</h1>
+        <img src="%EA%B3%A0%EC%96%91%EC%9D%B41.jpg" height="200">
+        <img src="%EA%B0%9C1.jpg" width="200">
+        <img src="%EC%83%881.jpg" width="150">
+        <img src="%ED%8C%AC%EB%8D%941.jpeg" width="200">
+        <img src="imges/dogmover.gif" height="200">
+        
+        <img src="test" alt="이미지 파일입니다">
+        
+        <h1 id="tag-5">Table tag</h1>
+        <table border="1">
+            <tr>
+                <th>tag</th>
+                <th>설명</th>
+            </tr>
+            
+            <tr>
+                <td>table</td>
+                <td>표를 생성해주는 태그</td>
+            </tr>
+            
+            <tr>
+                <td>thead</td>
+                <td>표의 머리글</td>
+            </tr>
+            
+            <tr>
+                <td>tbody</td>
+                <td>표의 본문</td>
+            </tr>
+            
+            <tr>
+                <td>tfoot</td>
+                <td>표의 꼬리</td>
+            </tr>
+            
+            <tr>
+                <td>tr</td>
+                <td>표의 행</td>
+            </tr>
+            
+            <tr>
+                <td>th</td>
+                <td>표의 각 열의 라벨을 표현</td>
+            </tr>
+            
+            <tr>
+                <td>td</td>
+                <td>표의 포함되는 열을 생성</td>
+            </tr>
+        
+        </table>
+        
+        <h1> Table tag</h1>
+        
+        <table border="1">
+            <tr>
+                <td>1,1</td>
+                <td>1,2</td>
+            </tr>
+            <tr>
+                <td>2,1</td>
+                <td>2,2</td>
+            </tr>
+        </table>
+        
+        
+        <table border="1">
+            <tr>
+                <td colspan="2">1,1</td>
+                <!--<td>1,2</td>-->
+            </tr>
+            <tr>
+                <td>2,1</td>
+                <td>2,2</td>
+            </tr>
+        </table>
+        
+        <table border="1">
+            <tr>
+                <td rowspan="2">1,1</td>
+                <td>1,2</td>
+            </tr>
+            <tr>
+                <td>2,1</td>
+            </tr>
+        </table>
+        
+        <table border="1">
+            <tr>
+                <th colspan="2">지역별홍차</th>
+            </tr>
+            <tr>
+                <th rowspan="3">중국</th>
+                <td>정산소종</td>
+            </tr>
+            <tr>
+                <td>기문</td>
+            </tr>
+            <tr>
+                <td>운남</td>
+            </tr>
+            <tr>
+                <th rowspan="4">인도 및 스리랑카</th>
+                <td>아삼</td>
+            </tr>
+            <tr>
+                <td>실론</td>
+            </tr>
+            <tr>
+                <td>다질링</td>
+            </tr>
+            <tr>
+                <td>닐기리</td>
+            </tr>
+        </table>
+        
+        
+        
+        
+        <hr>
+        
+        <h1 id="tah-4">LIST tag</h1>
+        
+        <!--순서 없는 리스트 -->
+        
+        <ul>
+            <li>카카오</li>
+            <li>네이버</li>
+            <li>페이스북</li>
+        </ul>
+        
+        <hr>
+        
+        <!--순서 있는 리스트 -->
+        
+        <ol>
+            <li>카카오</li>
+            <li>네이버</li>
+            <li>페이스북</li>
+        </ol>
+        
+        <hr>
+        
+        
+        <h1 id="tag-3">홍차</h1>
+        <hr>
+        <h4>정의</h4>
+        <p>
+        </p>
+        홍차는 백차, 녹차 어쩌구 저쩌구 블랙티라고 부른다
+        <p>
+        </p>
+        <h4>등급</h4>
+        <p>
+        </p>
+        홍차는 어쩌구 저쩌구 등급이 있다
+        <br><br>
+        - 브로큰 페코
+        <br><br>
+        - 브로큰 페코 수숑
+        <br><br>
+        - 브로큰 오렌지 페코 패닝
+        
+        
+        
+        
+        
+        
+        
+        
+        <h1 id="tag-2"> 문단 tag </h1>
+        <p>  
+        </p>
+        <h2> ‘카트라이더 러쉬플러스’, ‘펭수’ 캐릭터 나온다 충격충격 </h2>
+        <p>
+        </p>
+        20일 넥슨은 카러플과 펭수의 콜라보레이션 티저 영상을 공개했다. 영상에서는 써킷 위에서 순위를 다투는 카레이싱 장면이 나온다. 달리는 선두 차량 옆으로 펭수가 탄 레이싱카가 스쳐 지나간다.
+        <img src="http://www.bloter.net/wp-content/uploads/2020/11/331-765x321.jpg">
+        <p>
+        </p>
+        넥슨은 영상 말미에 카러플 내 펭수 캐릭터 출시 소식과 ’11월 26일 커밍-쑤운’이라는 문구를 소개했다. 이를 통해 오는 26일 펭수 캐릭터가 출시될 가능성이 점쳐졌다.
+        <p>
+        </p>
+        카러플은 펭수 캐릭터를 통해 재도약을 기대하고 있다. 지난 5월 출시 후 양대 애플리케이션(앱) 마켓 매출 상위권을 유지해 온 카러플은 이날 기준 구글 매출 10위를 기록했다.
+        <p>
+        </p>
+        한편 카러플은 ‘크레이지레이싱: 카트라이더’ 지식재산권(IP)을 모바일로 옮긴 레이싱 게임이다. 최근 카러플은 자동차, 유통, 캐릭터 등 다양한 브랜드와 협업을 이어가고 있다.
+        
+        <hr>
+        <hr>
+        <hr>
+        
+        
+        <h1 id="tag-1">Heading Tag</h1>
+        <h1>안녕하세요안녕하세요안녕하세요안녕하세요.</h1>
+        <h2>안녕하세요안녕하세요안녕하세요안녕하세요.</h2>
+        <h3>안녕하세요안녕하세요안녕하세요안녕하세요.</h3>
+        <h4>안녕하세요안녕하세요안녕하세요안녕하세요.</h4>
+        <h5>안녕하세요안녕하세요안녕하세요안녕하세요.</h5>
+        <h6>안녕하세요안녕하세요안녕하세요안녕하세요.</h6>
+
+        <a href="#top">T.O.P</a>
+        
+    </body>
+
+</html> <!-- HTML 문서 끝 -->
