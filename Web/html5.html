@@ -25,6 +25,49 @@
                 background-color:cadetblue
             }
             
+            #nav {
+            margin: 10px px;
+            overflow: hidden;
+            }
+            
+            #nav>li{
+                float:left;
+                padding: 0px ;
+                margin: 10px 10px
+            }
+            
+            #nav>li:first-child{
+                background-color:aquamarine;
+                border-radius: 10px 0 0 10px;
+            }
+            
+            #nav>li:last-child{
+            background-color: aqua;
+            border-radius: 0 10px 10px 0;
+            }
+            
+             #nav>li:nth-child(2n){
+            background-color: aqua;
+                 padding: 0 3px
+            }
+        
+            #nav>li:nth-child(2n+1){
+            background-color: aquamarine;
+                padding: 0 3px
+            }
+            
+            input[type=text]:hover{
+                background-color: aquamarine;
+                font-style:italic;
+            }
+            
+            input[type=password]:hover{
+                background-color: aqua
+            }
+            
+            ol{
+                border: 10px solid aquamarine;
+            }
             
         </style> <!-- 웹 문서의 요소들의 스타일로 정의 -->
         <script>
@@ -37,7 +80,7 @@
         <h3 id="top">INDEX</h3>
         
         
-        <ol>
+        <ol id="nav">
             <li> <a href="http://www.naver.com">Naver</a></li>
             <li><a href="#tag-1">Heading Tag</a></li>
             <li><a href="http://192.168.0.35">link</a></li>
