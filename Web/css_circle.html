@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS로 원 만들기!</title>
+    
+    <style>
+        
+        *{
+            margin: 10px;
+            padding: 10px;
+        }
+        
+
+        
+        #wrap{
+            position: relative;
+            border: 5px solid black;
+            overflow: auto;
+            height: 300px;
+            z-index: 1
+        }
+        
+        #warpwarp{
+            position: relative;
+            border: 5px solid black;
+            overflow: auto;
+            height: 250px;
+            z-index: 0
+        }
+        
+        .circle{
+            width: 50px;
+            height: 50px;
+            border-radius: 40px;
+            border: 3px solid black;
+            text-align: center;
+            line-height: 40px;
+            position:absolute;
+            font-family:fantasy;
+            color:black
+        }
+        #circle1{
+            background-color:crimson;
+            left: 10px;
+            top: 10px;
+        }
+        
+        #circle2{
+            background-color:green;
+            bottom: 10px;
+        }
+        
+        #circle3{
+            background-color:blue;
+            right: 10px;
+        }
+        
+        #circle4{
+            background-color:yellow;
+            right: 10px;
+            bottom: 10px;
+        }
+        
+        #circle5{
+            background-image: url(%EC%83%881.jpg);
+            background-size: contain;
+            left: 280px;
+            top: 120px;
+            z-index: 10
+        }
+         #circle6{
+            background-image:url(%EA%B0%9C1.jpg);
+            background-size: contain;
+            left: 280px;
+            top: 180px;
+            z-index: 3
+        }
+        
+         #circle7{
+            background-image:url(%ED%8C%AC%EB%8D%941.jpeg);
+            background-size: contain;
+            left: 330px;
+            top: 140px;
+            
+        }
+        
+        #wrap>div:hover{
+            background-color:white;
+            color: white;
+        }
+        
+        #wrapwral>div:hover{
+            color:white;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="circle1" class="circle">red</div>
+        <div id="circle2" class="circle">green</div>
+        <div id="circle3" class="circle">blue</div>
+        <div id="circle4" class="circle">yellow</div>
+        
+        <div id="warpwarp">
+            <div id="circle5" class="circle">bird</div>
+            <div id="circle6" class="circle">dog</div>
+            <div id="circle7" class="circle">panda</div>   
+        </div>
+         
+    </div>
+</body>
+</html>
+
