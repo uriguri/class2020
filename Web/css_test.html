@@ -1,143 +1,112 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>HTML5 Example</title>
-    <style>
     
-        *{
-          margin: 5px;
-          padding: 5px;
-        }
-        div{
-            border: 1px solid #ddd;
-        }
-        
-        #warp{
-            border: 10px solid #ddd
-        }
-        
-        #header{
-            width: 800px;
-            height: 100px;
-            margin: 20px;
-        }
-        
-        #nav{
-            width: 800px;
-            height: 50px;
-            list-style: none;
-            position: relative;
-            overflow: auto;
-            margin: px
-        }
-        
-        #content{
-            width: 600px;
-            height: 600px;
-            float: left;
-        }
-        
-        #side{
-            width: 178px;
-            height: 600px;
-            float: left;
-        }
-        
-        #footer{
-            width: 800px;
-            height: 50px;
-            clear: both;
-        }
-    </style>
-    
-    <style>
-        
-        h1{
-            font-family: 'Nanum Gothic', sans-serif;
-        }
-        
-        
-        
-        li{
-            width: 100px;
-            float: left;
-            font-family: 'Nanum Gothic', sans-serif;
-        }
-        
-        input[type=search]{
-            width: 120px;
-            height: 30px; 
-            float: right;
-            margin: 0;
-            padding: 0;
-            border-radius: 10px 0 0 10px;
-            border: 2px solid #ddd;
-        }
-        
-        input[type=button]{
-            width: 40px;
-            height: 30px;
-            float: right;
-            margin: 0;
-            padding: 0;
-            border-radius: 0 10px 10px 0;
-            border: 2px solid #ddd;
-            font-family: 'Nanum Gothic', sans-serif;
-        }
-        
-    </style>
-    
+    <!--외부에서 default.css를 로드-->
+    <link rel="stylesheet" href="default.css">
     
 </head>
 
 <body>
    
-<div id="warp">
+<div id="wrap">
     
     <div id="header">
         <h1>HTML5 Examlple PreView</h1>
-        　에이아이아카데미
-        
+        <h4>에이아이아카데미</h4>　
     </div>
     
     <div id="nav">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
         
-        <form action="#" method="get">
-        <input type="button" name="sbutton" value="검색">
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ul>
+        
+        <form>
+            
         <input type="search" name="search">
+        <input type="button" name="sbutton" value="검색">
+        
         </form>
        
     </div>
     
+    <div id="contents_wrap">
     
-    <div id="content">
+        <div id="content">
         
-    <h2>HTML5 개요와 활용</h2>
-    <h4>2020년 11월 24일</h4>
+            <section>
+                <article>
+                    <h1> 강아지가 화났다</h1>
+                    <p>2020.11.25</p>
+                    <img src="%EA%B0%9C1.jpg">
+                    <p>
+                     강아지가 삐지면 가장 많이 보이는 증상이 불러도 오지않거나 처다보지 않으려고 하거나 다가오지 않고 처다만 보는 등의 모습을 보이게 되는 것이 아닐까 합니다. <br>심하면 사료를 먹지않으려고 하는 등의 증상을 보이기도 합니다.
+                    <br>이런 증상은 적당히 놀아주게 되면 쉽게 풀리면서 다시 활발하게 애교를 부리게 되지만 심하게 삐진 경우에는 이런 상황이 조금 오래 지속되기도 합니다.<br>
+                    이럴땐 강아지가 좋아하는 간식으로 놀아주거나 강아지를 움직이게 하는 것이 좋습니다.<br>
+                    달래는 말과 조금은 높은 톤으로 강아지의 이름을 불러주면서 놀아주려고 하는 모습을 모인다면 강아지는 화를 풀기도 합니다. 삐져있더라도 견주가 조금만 달래주고 간식으로 위로해준다면 강아지의 삐짐은 조금 더 쉽게 풀리게 됩니다.<br>
+                    </p>
+                    
+                    <hr>
+                </article>
+                
+                <article>
+                    <h1> 고양이가 귀엽다</h1>
+                    <p>2020.11.25</p>
+                    <img src="%EA%B3%A0%EC%96%91%EC%9D%B41.jpg">
+                    <p>
+                    고양이 몸 어디를 만져도 말랑말랑하고 보드라워서 꼭 껴안고 싶어 지는 충동을 일으킵니다. 물론 고양이는 싫어하지만 말입니다. <br>부드러운 털과 몸은 둥근 얼굴 다음으로 고양이가 귀엽게 느껴지게 하는 요건입니다.
+                    </p>
+                    
+                    <hr>
+                </article>
+            </section>
+    
+        </div>
         
-    <img src="%EA%B3%A0%EC%96%91%EC%9D%B41.jpg" height="280" width="430">
+        <div id="side">
         
-    <p>
-    고양이 솔직히 귀여움 가나다라 마바사 아무노래나 틀어
-    </p>
+            <h4>카테고리</h4>
+            <ul>
+                <li>새</li>
+                <li>팬더</li>
+                <li>고양이</li>
+                <li>강아지</li>
+            </ul>
+            
+            <h4>최근 글</h4>
+            <div>
+                고양이밥주기<br>
+                강아지산책<br>
+                팬더구르기<br>
+                새가날라감<br>
+            </div>
+        </div>
+    
     </div>
     
-    <div id="side">카테고리
-        <br>데이터<br>데이터<br>데이터<br>데이터
-        <br><br><br><br><br>
-        최근글
-        <br>데이터<br>데이터<br>데이터<br>데이터
-    </div>
-    <div id="footer">FOOTER</div>
+    
+   
+   
+    
+    <footer>
+        2020-11-25 uriguri
+    </footer>
+    
+    
+    
 </div>
+    
 </body>
+    
 </html>
