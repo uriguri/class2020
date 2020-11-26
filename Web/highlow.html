@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+</body></html>
+
+<script>
+    
+    // 하이로우 게임
+    // 랜덤한 숫자를 생성한다.
+    
+    // 기회
+    var count = 5;
+    
+    var number = Math.random()*100;
+    number = Math.floor(number);
+    
+    while(count>0){ 
+
+        // 유저의 입력을 받는다.
+        var userInput = prompt('숫자를 입력하세요 0~99');
+
+        //입력 확인용 콘솔
+        console.log('Random Number : ',number);
+        console.log('userInput : ',userInput);
+        console.log('count' , count);
+
+        if(number==userInput){
+            alert('정답입니다 짝짝짝')
+            break;
+            
+        } else if(number>userInput){
+            alert('땡! 정답이 더 큰수입니다.')
+            --count;
+            
+        } else {
+            alert('땡! 정답이 더 작은수입니다.')
+            --count;
+        }
+        
+        setTimeout(function(){
+        alert('Time Over');
+        var count = 0;
+        },3*1000);
+
+    }
+    
+    
+</script>
