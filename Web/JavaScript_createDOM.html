@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>문서객체 동적 생성</title>
+
+    <script>
+        window.onload = function() {
+
+            // 태그 요소 생성
+            var header = document.createElement('h1');
+
+            // 텍스트 요소 생성
+            var textNode = document.createTextNode('안녕하세요');
+
+            // 태그요소에 텍스트요소 추가
+            header.appendChild(textNode);
+
+            // 새로운 문서객체를 body 요소에 추가
+            document.body.appendChild(header);
+
+            // 텍스트가 없는 요소 : img
+            var img = document.createElement('img');
+            img.src = '개1.jpg';
+            img.width = 200;
+            img.height = 400;
+
+            document.getElementById('title').appendChild(img);
+            
+            //document.getElementById('title').appendChild(img);
+
+            var title = document.getElementById('title');
+            
+            //colsole.log('h1#title id->', title.getAttribute('data-brackets-id'));
+            
+            var link = document.getElementById('link_naver');
+            
+            // 텍스트 노드 생성
+            //var str = document.createTextNode('-'+link.getAttribute('href')); 
+            var str = document.createTextNode('-'+link.href); 
+            
+            link.appendChild(str);
+            
+            var img1 = document.createElement('img');
+            img1.setAttribute('src', 'imges/dogmover.gif');
+            img1.setAttribute('width', 200);
+            
+            document.body.appendChild(img1);
+            
+            // 속성의 값이 HTML로 인식
+            title.innerHTML = '<i>안녕하세요</i>';
+            
+            // HTML로 인식하는것이 아니라 순수하게 문자열로 입력해준다.
+            title.textContent = '<i>안녕하세요</i>';
+            
+            
+            // html 문서의 요소를 문서객체로 만들기
+            // id 속성값으로 문서 객체 생성 : 캐스팅
+            // document.getElementById('아이디속성값');
+            
+            var header1 = document.getElementById('header-1');
+            var header2 = document.getElementById('header-2');
+            
+            header1.innerHTML='<i>문서객체 생성</i>';
+            header2.textContent='<i>문서객체 생성</i>';
+            
+            ///////////////////////////////////////////
+            
+            //태그이름으로 문서객체 생성 -> 배열로 반환
+            var divs = document.getElementsByTagName('div');
+            
+            divs[0].innerHTML='BytagName-0';
+            divs[1].innerHTML='BytagName-1';
+            
+            /////////////////////////////////////////////
+            
+            // CSS의 선택자로 선택할 수 있는 메서드
+            var div1 = document.querySelector('div');
+            alert(div1.innerHTML)
+            
+            
+            /*
+            var divs = document.querySelectorAll('div');
+            for(var i in divs){
+                alert(i.innerHTML);
+            }
+            */
+            
+            var input = document.querySelector('input[type=button]');
+            alert(input.value);
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <div id="header-1">1</div>
+    <div id="header-2">2</div>
+    
+    
+    
+    <h1 id="title">새로운 문서객체를 추가합니다.</h1>
+    
+    <input type="button" value="네이버로이동" id="link_naver">
+    <a href="http://www.naver.com" >네이버</a>
+
+</body></html>
