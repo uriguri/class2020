@@ -40,11 +40,5 @@ public class LoginData {
 		return "LoginData [userid=" + userid + ", pw=" + pw + "]";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+
 }
