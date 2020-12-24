@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="styleSheet" href="${pageContext.request.contextPath}/css/default.css">
+<link rel="styleSheet" href="${url_defaultCss}">
 
 </head>
 <body>

@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import member.Member;
 
@@ -35,13 +38,14 @@ public class MemberDao {
 			
 			PreparedStatement pstmt = null;
 			
-			String sqlInsert = "INSERT INTO open.member (memberid,password,membername) VALUES (?,?,?)";
+			String sqlInsert = "INSERT INTO open.member (memberid,password,membername, memberphoto) VALUES (?,?,?,?)";
 			
 			try {
 				pstmt = conn.prepareStatement(sqlInsert);
 				pstmt.setString(1, member.getUserId());
 				pstmt.setString(2, member.getPassword());
 				pstmt.setString(3, member.getUserName());
+				pstmt.setString(4, member.getUserPhoto());
 				
 				resultCnt = pstmt.executeUpdate();
 				
@@ -67,12 +71,8 @@ public class MemberDao {
 				
 				ResultSet rs = pstmt.executeQuery();
 				
-				if(rs.next()) {
-					member = new Member(rs.getString("memberid"),
-										rs.getString("password"),
-										rs.getString("membername"),
-										rs.getString("memberphoto"));
-				
+				if(rs.next()) {				
+					member = makeMember(rs);
 				}
 				
 			} catch (SQLException e) {
@@ -80,5 +80,46 @@ public class MemberDao {
 			}
 			
 			return member;
+		}
+
+		//전체 리스트를 반환하는 select
+		public List<Member> selectMember(Connection conn){
+			
+			List<Member> list = new ArrayList<Member>();
+			
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			String sql = "SELECT * FROM member";
+			
+			try {
+				pstmt = conn.prepareStatement(sql);
+				
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					list.add(makeMember(rs));
+				}
+				
+				rs.close();
+				pstmt.close();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+			return list;		
+			
+		}
+		
+		private Member makeMember(ResultSet rs) throws SQLException {
+			return new Member(
+					rs.getString("memberid"),
+					rs.getString("password"),
+					rs.getString("membername"),
+					rs.getString("memberphoto"),
+					rs.getTimestamp("regDate")
+					);
 		}
 }

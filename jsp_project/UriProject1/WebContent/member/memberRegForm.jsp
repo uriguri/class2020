@@ -4,23 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Uri Project</title>
 
-<link rel="styleSheet" href="${url_defaultCss}">
+<link rel="styleSheet" href="<%= request.getContextPath() %>/css/default.css">
+
 </head>
 <body>
-
+	
 	<%@ include file="/include/header.jsp" %>
-		
 	
 	<%@ include file="/include/nav.jsp" %>
 	
 	<div class="contents">
-		<h2 class="content_title">회원 가입폼</h2>
-		<hr>
-		<div class="content">
 	
-    <form action="memberReg2.jsp" method="post" enctype="multipart/form-data">
+		<h2 class="content_title">회원 가입 폼</h2>
+		
+		<hr>
+		
+		<div class="content">
+		 <form action="regMember.jsp" method="post">
         <table>
             <tr>
                 <th><label for="userid">아이디(email)</label></th>
@@ -55,24 +57,11 @@
         </table>
     </form>
 		</div>
+		
 	</div>
 	
+	<%@ include file="/include/footer.jsp" %>
 	
 	
-	
-	
-	<%@ include file="/include/footer.jsp"%>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 </body>
 </html>

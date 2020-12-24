@@ -1,14 +1,14 @@
 <%@page import="member.LoginInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/include/loginCheck.jsp" %>	
+<%-- <%@ include file="/include/loginCheck.jsp" %>	 --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="styleSheet" href="${pageContext.request.contextPath}/css/default.css">
+<link rel="styleSheet" href="${url_defaultCss}">
 
 </head>
 <body>
@@ -32,7 +32,7 @@
 		%>
 		<%-- <img alt="프로필 사진" src="<%= request.getContextPath()%>/images/<%=loginInfo.getMemberPhoto()%>"
 		height = "100"> --%>
-		<img alt="프로필 사진" src="${pageContext.request.contextPath}/images/${loginInfo.memberPhoto}"
+		<img alt="프로필 사진" src="${pageContext.request.contextPath}/upload/member${loginInfo.memberPhoto}"
 		height = "100">
 		<%	
 			}
