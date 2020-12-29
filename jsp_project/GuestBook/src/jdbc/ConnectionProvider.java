@@ -15,8 +15,9 @@ public class ConnectionProvider {
 		String user = "aia";
 		String password = "aia";
 		
-	
+		
 			conn = DriverManager.getConnection(jdbcUrl, user, password);
+			
 		
 		
 		return conn;
