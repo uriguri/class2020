@@ -1,0 +1,20 @@
+package member.service;
+
+import javax.annotation.Resource;
+
+import member.dao.Dao;
+
+public class MemberRegService3 implements MemberService {
+
+	@Resource(name= "memberDao")
+	Dao dao; // 주입 받아야 하는 참조 변수
+	
+	public Object process() {
+		System.out.println("MemberRegService 실행");
+		
+		dao.insert();
+		
+		return null;
+	}
+
+}
