@@ -53,6 +53,15 @@
 		<li><a href="${fileupload}">${fileupload}</a></li>
 	</ul>
 	
+	<c:url value="/member/list" var="memberList"/>
+	<ul>
+		<li><a href="${memberList}">${memberList}</a></li>
+	</ul>
+	
+	<c:url value="/member/reg" var="memberReg"/>
+	<ul>
+		<li><a href="${memberReg}">${memberReg}</a></li>
+	</ul>
 	
 </body>
 </html>
