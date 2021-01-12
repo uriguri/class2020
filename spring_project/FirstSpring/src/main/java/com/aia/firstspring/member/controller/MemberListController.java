@@ -9,17 +9,19 @@ import com.aia.firstspring.member.service.MemberListService;
 
 @Controller
 public class MemberListController {
-
+	
 	@Autowired
 	private MemberListService listService;
 	
 	@RequestMapping("/member/list")
 	public String getMemberList(Model model) {
 		
+		
 		model.addAttribute("members", listService.getMemberList());
 		model.addAttribute("memberCnt", listService.getmemberTotalCount());
+		
+		
 		return "member/list";
 	}
-	
-	
+
 }

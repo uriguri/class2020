@@ -11,7 +11,6 @@ import com.aia.firstspring.domain.OrderCommand;
 @RequestMapping("/order/order")
 public class OrderController {
 	
-	
 	@RequestMapping(method = RequestMethod.GET)
 	public String getOrderForm() {
 		return "order/orderForm";
@@ -22,4 +21,5 @@ public class OrderController {
 		System.out.println(order);
 		return "order/orderComplete";
 	}
+
 }

@@ -3,34 +3,50 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- MemberDao Bean으로 등록 -->
-	<bean id="memberDao" class="member.dao.MemberDao"></bean>
-
-	<!-- MemberRegService Bean으로 등록 -->
+	<!-- MemberDao Bean(인스턴스)으로 등록 -->
+	<bean 
+				id="memberDao"
+				class="member.dao.MemberDao"
+	></bean>
 	
-	<!-- <bean id="memberRegService" class="member.service.MemberRegService"/> -->
-
+	<!-- MemberRegService Bean으로 등록 -->
+	<!-- <bean 
+				id="memberRegService"
+				class="member.service.MemberRegService"
+	/> -->
+	
 	<bean id="memberRegService"
-		class="member.service.MemberRegService">
-
-		<!-- <constructor-arg ref="memberDao"/> -->
-		
-		<constructor-arg>
-			<ref bean="memberDao"/>
-		</constructor-arg>
-		
+				class="member.service.MemberRegService"
+	 > 
+	 
+	 	<!-- <constructor-arg ref="memberDao"/> -->
+	 	<constructor-arg>
+	 		<ref bean="memberDao"/>
+	 	</constructor-arg>
+	
 	</bean>
 	
 	<!-- MemberInfoService Bean 등록 -->
 	<bean id="memberInfoService"
-		  class="member.service.MemberInfoService"
+				class="member.service.MemberInfoService"
 	>
-		<!-- <property name="dao" ref="memberDao"/> -->
+	
+		<!-- <property name="dao"  ref="memberDao" /> -->
 		
 		<property name="dao">
 			<ref bean="memberDao"/>
 		</property>
 		
+	
 	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 </beans>

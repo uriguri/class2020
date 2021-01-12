@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>인사</title>
 </head>
 <body>
+
 	<h1>
-		${greeting}
+				${greeting}
 	</h1>
+
 </body>
 </html>

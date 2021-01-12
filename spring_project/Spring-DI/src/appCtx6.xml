@@ -8,13 +8,22 @@
 
 	<context:annotation-config/>
 
-	<!-- MemberDao Bean으로 등록 -->
+	<!-- MemberDao Bean(인스턴스)으로 등록 -->
 	<bean id="memberDao" class="member.dao.MemberDao"/>
 
 	<!-- MemberRegService Bean으로 등록 -->
 	<bean id="memberRegService" class="member.service.MemberRegService2"/>
-	
+
 	<!-- MemberInfoService Bean 등록 -->
 	<bean id="memberInfoService" class="member.service.MemberInfoService2"/>
+
+
+
+
+
+
+
+
+
 
 </beans>

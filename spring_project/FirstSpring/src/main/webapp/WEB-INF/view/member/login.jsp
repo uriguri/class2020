@@ -7,9 +7,10 @@
 <title>Login Page</title>
 </head>
 <body>
-	<h1>id : ${uid} pw: ${pw}</h1>
-	<h1>id : ${userId} pw: ${userPw}</h1>
-	<h1>id : ${loginRequest.uid} pw: ${loginRequest.pw}</h1>
-	
+
+	<h1>id: ${uid}, pw: ${pw}</h1>
+	<h1>id: ${userId}, pw: ${userPw}</h1>
+	<h1>id: ${loginRequest.uid}, pw: ${loginRequest.pw}</h1>
+
 </body>
 </html>

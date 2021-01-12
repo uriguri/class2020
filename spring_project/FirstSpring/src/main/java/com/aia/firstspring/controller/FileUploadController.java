@@ -17,7 +17,7 @@ import com.aia.firstspring.domain.ReportUploadRequest;
 @Controller
 public class FileUploadController {
 	
-	final String URI = "/uploadfile";
+	final String URI = "/uploadfile";	
 	
 	@RequestMapping("/upload/uploadForm")
 	public String uploadForm() {
@@ -43,7 +43,6 @@ public class FileUploadController {
 		return "upload/uploadComplete";
 	}
 	
-	
 	@RequestMapping("/upload/upload2")
 	public String upload2(
 			MultipartHttpServletRequest request,
@@ -55,10 +54,10 @@ public class FileUploadController {
 		
 		System.out.println(report.getOriginalFilename());
 		
-		
-		
 		// 파일 업로드
 		report.transferTo(getFile(request, URI, report.getOriginalFilename()));
+		
+		
 		
 		model.addAttribute("sno", sn);
 		model.addAttribute("reportFile", report.getOriginalFilename());
@@ -66,6 +65,7 @@ public class FileUploadController {
 		return "upload/uploadComplete";
 	}
 	
+
 	
 	@RequestMapping("/upload/upload3")
 	public String upload3(
@@ -81,6 +81,7 @@ public class FileUploadController {
 		
 		uploadRequest.getReport().transferTo(getFile(request, URI, uploadRequest.getReport().getOriginalFilename()));
 		
+		
 		return "upload/uploadComplete";
 	}
 	
@@ -88,16 +89,18 @@ public class FileUploadController {
 	private File getFile(
 			HttpServletRequest request, 
 			String uri,
-			String fileName
-			) {
+			String fileName) {
 		
-	//	String rpath = request.getSession().getServletContext().getRealPath(uri); 
-		
-	//	File newFile = new File(rpath, fileName);
-		
-	//	return newFile;
+//		String rpath = request.getSession().getServletContext().getRealPath(uri);
+//		File newFile = new File(rpath, fileName);
+//		return newFile ;
 		
 		return new File(request.getSession().getServletContext().getRealPath(uri), fileName);
-		
 	}
+	
+	
+	
+	
+	
+
 }

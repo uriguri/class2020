@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.aia.firstspring.member.domain.Member;
 import com.aia.firstspring.member.service.MemberRegService;
 
-
 @Controller
 @RequestMapping("/member/reg")
 public class MemberRegController {
@@ -25,11 +24,14 @@ public class MemberRegController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String memberReg(Member member, Model model) {
 		
+		System.out.println(member);
 		int resultCnt = regService.insertMember(member);
+		
+		System.out.println(member);
 		
 		model.addAttribute("resultCnt", resultCnt);
 		
-		String view= "member/reg";
+		String view = "member/reg";
 		
 		if(resultCnt==1) {
 			view = "redirect:/member/list";
@@ -37,4 +39,13 @@ public class MemberRegController {
 		
 		return view;
 	}
+	
+
 }
+
+
+
+
+
+
+

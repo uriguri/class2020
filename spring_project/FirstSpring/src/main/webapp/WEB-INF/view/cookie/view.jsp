@@ -8,10 +8,10 @@
 </head>
 <body>
 	<h1>쿠키 정보</h1>
-	<h3>	
-		${userName}	<br>
-		${cookieInfo} <br>
-		${cookieAuth}<br>	
+	<h3> 
+		${userName} <br>
+		${cooKieInfo} <br>
+		${cookieAuth} <br>
 		${uid}
 	</h3>
 </body>

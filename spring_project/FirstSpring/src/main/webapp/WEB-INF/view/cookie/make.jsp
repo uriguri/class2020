@@ -8,12 +8,13 @@
 </head>
 <body>
 	<h1>쿠키가 생성되었습니다.</h1>
-	<h3>	
+	<h3> 
 	
-	
-	<!-- /firstspring/cookie/make -->
-	<!-- /firstspring/cookie/view -->
-	
+<!-- 	
+			/firstspring/cookie/make
+			/firstspring/cookie/view
+-->
+	 
 		<a href="view">쿠키 정보 확인</a>
 	</h3>
 </body>

@@ -4,16 +4,15 @@ import javax.annotation.Resource;
 
 import member.dao.Dao;
 
-public class MemberRegService3 implements MemberService {
+public class MemberRegService3 implements MemberService  {
 
-	@Resource(name= "memberDao")
-	Dao dao; // 주입 받아야 하는 참조 변수
+	@Resource(name = "guestDao")
+	private Dao dao; // 주입 받아야 하는 참조 변수
 	
+	@Override
 	public Object process() {
 		System.out.println("MemberRegService 실행");
-		
 		dao.insert();
-		
 		return null;
 	}
 

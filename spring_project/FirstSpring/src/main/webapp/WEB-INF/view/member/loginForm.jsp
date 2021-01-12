@@ -7,12 +7,15 @@
 <title>로그인 폼</title>
 </head>
 <body>
+
 	<h1>Login Form</h1>
 	
-	<form method="POST"> 
-		id <input type="text" name="uid"><br>
-		pw <input type="password" name="pw"><br>
+	<form method="POST">
+		id <input type="text" name="uid"> <br>
+		pw <input type="password" name="pw"> <br>
 		<input type="submit">
 	</form>
+
+
 </body>
 </html>

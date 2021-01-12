@@ -8,20 +8,29 @@
 
 	<context:annotation-config/>
 
-	<!-- MemberDao Bean으로 등록 -->
-	<!-- <bean id="memberDao" class="member.dao.MemberDao">
-		<qualifier value="member"></qualifier>
+	<!-- MemberDao Bean(인스턴스)으로 등록 -->
+<!-- 	<bean id="memberDao" class="member.dao.MemberDao">
+		<qualifier value="member"/>
 	</bean> -->
 	
 	<!-- GuestDao Bean 등록 -->
-	<!-- <bean id="guestDao" class="member.dao.GuestDao">
-		<qualifier value="guest"></qualifier>
+<!-- 	<bean id="guestDao" class="member.dao.GuestDao">
+		<qualifier value="guest"/>
 	</bean> -->
 
 	<!-- MemberRegService Bean으로 등록 -->
 	<bean id="memberRegService" class="member.service.MemberRegService2"/>
-	
+
 	<!-- MemberInfoService Bean 등록 -->
 	<bean id="memberInfoService" class="member.service.MemberInfoService2"/>
+
+
+
+
+
+
+
+
+
 
 </beans>

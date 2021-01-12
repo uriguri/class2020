@@ -1,10 +1,10 @@
 package com.aia.firstspring.domain;
 
 public class SearchType {
-	
+
 	private int value;
 	private String label;
-	
+
 	public SearchType(int value, String label) {
 		super();
 		this.value = value;
@@ -28,7 +28,5 @@ public class SearchType {
 	}
 	
 	
-	
-	
-	
+
 }
