@@ -1,4 +1,4 @@
-package com.uri.sp.domain;
+package com.uri.sp.member.domain;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,11 +1,11 @@
-package com.uri.sp.controller;
+package com.uri.sp.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.uri.sp.domain.MemberRegRequest;
+import com.uri.sp.member.domain.MemberRegRequest;
 
 @Controller
 @RequestMapping("/member/reg")
@@ -17,9 +17,7 @@ public class MemberRegController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String memberReg(
-			@ModelAttribute("regData") MemberRegRequest regRequest
-			) {
+	public String memberReg(@ModelAttribute("regData") MemberRegRequest regRequest) {
 		
 		System.out.println(regRequest); //확인용
 		

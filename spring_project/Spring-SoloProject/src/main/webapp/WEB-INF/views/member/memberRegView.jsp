@@ -27,6 +27,7 @@
 		<div class="content">
 		
 		${regData}
+		${memberRegRequest}
 		
 		<c:if test="${result > 0}">
 		정상적으로 회원가입이 되었습니다.
