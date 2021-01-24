@@ -81,8 +81,8 @@
 					<td>
 						<fmt:formatDate value="${member.regdate}" pattern="yyyy.MM.dd."/>
 					</td>
-					<td>	
-						<a href="<c:url value="/member/edit?idx=${member.idx}"/>">수정</a>
+					<td>  
+						<a href="<c:url value="/member/edit?idx=${member.idx}"/>">수정</a> 
 						<a href="javascript:deleteMember(${member.idx});">삭제</a>
 					</td>
 				</tr>
@@ -107,6 +107,7 @@
 
 
 <script>
+
 	function deleteMember(idx){
 		
 		if(confirm('정말로 삭제하시겠습니까?')){
@@ -114,6 +115,7 @@
 		}   // /op/member/delete?idx
 		
 	}
+
 </script>
 
 

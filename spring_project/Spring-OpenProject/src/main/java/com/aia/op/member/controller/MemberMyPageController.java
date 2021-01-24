@@ -12,19 +12,19 @@ public class MemberMyPageController {
 	public String myPage1() {
 		return "member/mypage";
 	}
-
+	
 	@RequestMapping("/mypage2") // /op/mypage/mypage2
 	public String myPage2() {
 		return "member/mypage";
 	}
 	
 	@RequestMapping("/mypage3") // /op/mypage/mypage3
-		public String myPage3() {
+	public String myPage3() {
 		
-		String str = null;
+		String str = "null";
 		str.charAt(1);
 		
-			return "member/mypage";
+		return "member/mypage";
 	}
 	
 	@ExceptionHandler(NullPointerException.class)
@@ -34,3 +34,8 @@ public class MemberMyPageController {
 	}
 	
 }
+
+
+
+
+

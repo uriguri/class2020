@@ -5,7 +5,7 @@ public class SearchParam {
 	private int p;
 	private String searchType;
 	private String keyword;
-	
+
 	public SearchParam(int p, String searchType, String keyword) {
 		this.p = p;
 		this.searchType = searchType;
@@ -44,10 +44,12 @@ public class SearchParam {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+
+	@Override
+	public String toString() {
+		return "SearchParam [p=" + p + ", searchType=" + searchType + ", keyword=" + keyword + "]";
+	}
 	
 	
-	
-	
-	
-	
+
 }

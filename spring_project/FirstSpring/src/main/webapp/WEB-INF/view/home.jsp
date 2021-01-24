@@ -53,6 +53,38 @@
 			<c:url value="/member/reg" var="memberReg"/>
 			<a href="${memberReg}">${memberReg}</a>
 		</li>
+		<li>
+			<c:url value="/members/10" var="members"/>
+			<a href="${members}">${members}</a>
+		</li>
+		<li>
+			<c:url value="/mc/simple" var="simple"/>
+			<a href="${simple}">${simple}</a>
+		</li>
+		<li>
+			<c:url value="/message/listXml" var="listXml"/>
+			<a href="${listXml}">${listXml}</a>
+		</li>
+		<li>
+			<c:url value="/message/listJson" var="listJson"/>
+			<a href="${listJson}">${listJson}</a>
+		</li>
+		<li>
+			<c:url value="/rest/ver1/members/39" var="restMember"/>
+			<a href="${restMember}">${restMember}</a>
+		</li>
+		<li>
+			<c:url value="/rest/ver1/members" var="restMembers"/>
+			<a href="${restMembers}">${restMembers}</a>
+		</li>
+		<li>
+			<c:url value="/rest/ver1/members/map" var="restMemberMap"/>
+			<a href="${restMemberMap}">${restMemberMap}</a>
+		</li>
+		<li>
+			<c:url value="/mail/simplemail" var="simplemail"/>
+			<a href="${simplemail}">${simplemail}</a>
+		</li>
 	</ul>
 
 

@@ -10,7 +10,7 @@ import com.aia.op.member.service.MemberDeleteService;
 
 @Controller
 public class MemberDeleteController {
-
+	
 	@Autowired
 	private MemberDeleteService deleteService;
 	
@@ -18,10 +18,12 @@ public class MemberDeleteController {
 	public String deleteMember(
 			@RequestParam("idx") int idx,
 			Model model
-			){
+			) {
+		
+		// 0 or 1
 		model.addAttribute("result", deleteService.deleteMember(idx));
 		
 		return "member/delete";
 	}
-	
+
 }

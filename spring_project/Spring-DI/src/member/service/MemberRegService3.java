@@ -2,6 +2,9 @@ package member.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import member.dao.Dao;
 
 public class MemberRegService3 implements MemberService  {

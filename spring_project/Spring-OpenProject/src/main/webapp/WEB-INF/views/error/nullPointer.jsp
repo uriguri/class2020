@@ -5,28 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>NullPointerException</title>
+<title>Insert title here</title>
 <%@ include file="/WEB-INF/views/include/basicset.jsp" %>
 <style>
-	
 	img {
-		width: 100px;
+		width:100px;
 		border-radius: 50%;
 	}
-
 </style>
 </head>
-<body>
+<body >
 	<%@ include file="/WEB-INF/views/include/header.jsp"  %>
-		
 	<%@ include file="/WEB-INF/views/include/nav.jsp"  %>
-	
 	<div class="contents">
 		<h2 class="content_title">NullPointerException</h2>
 		
 	</div>
-	
 	<%@ include file="/WEB-INF/views/include/footer.jsp" %>
-
 </body>
 </html>

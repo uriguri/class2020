@@ -20,20 +20,36 @@ public class MemberEditController {
 	private MemberEditService editService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String editForm(@RequestParam("idx") int idx, Model model) {
+	public String editForm(
+			@RequestParam("idx") int idx,
+			Model model
+			) {
 		// Service -> MemberDao -> mapper -> Member
 		model.addAttribute("member", editService.getMember(idx));
 		return "member/editForm";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String editMember(MemberEditRequest editRequest, Model model, HttpServletRequest request) {
+	public String editMember(
+			MemberEditRequest editRequest,
+			HttpServletRequest request,
+			Model model
+			) {
 		
 		// Service -> MemberDao : update -> mapper -> int
 		
-		// System.out.println(editRequest);
+		//System.out.println(editRequest);
+		
 		model.addAttribute("result", editService.editMember(editRequest, request));
 		
 		return "member/edit";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

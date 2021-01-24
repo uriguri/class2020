@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MemberLogoutController {
-
+	
 	@RequestMapping("/member/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		System.out.println("로그아웃!!!!!!!!!");
+		System.out.println("로그아웃!!!");
 		return "redirect:/";
 	}
+
 }

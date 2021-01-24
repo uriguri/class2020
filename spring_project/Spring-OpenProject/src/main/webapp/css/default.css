@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 	* {
 		margin: 0;
 		padding: 0;
@@ -23,8 +24,9 @@
 		overflow : hidden;	
 		list-style: none;
 		
-		border-top : 1px solid #DDD;
-		border-bottom : 1px solid #DDD;
+		border-top: 1px solid #DDD;
+		border-bottom: 1px solid #DDD;
+		
 	}
 	
 	nav>ul>li {
@@ -40,9 +42,7 @@
 	}
 	
 	div.contents>h2.content_title {
-		
 		padding : 10px;
-		
 	}
 	
 	hr {
@@ -56,9 +56,10 @@
 	
 	footer {
 	
-		border-top : 1px solid #DDD;		
-		
+		border-top: 1px solid #DDD;
+	
 		padding : 10px;
-		text-align : center;
+		text-align: center;
 	}
+	
 	

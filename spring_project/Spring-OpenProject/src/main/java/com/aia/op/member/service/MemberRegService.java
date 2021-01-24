@@ -23,24 +23,19 @@ public class MemberRegService {
 
 	// 파일을 업로드, 데이터베이스 저장
 	public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) {
-
+		
 		int result = 0;
 		
 		File newFile = null;
-		
 		String newFileName = null;
-
-		if (regRequest.getUserPhoto().isEmpty()) {
-
+		
+		if(!regRequest.getUserPhoto().isEmpty()) {
 			// 웹 경로
 			String uploadPath = "/fileupload/member";
-
 			// 시스템의 실제 경로
 			String saveDirPath = request.getSession().getServletContext().getRealPath(uploadPath);
-
 			// 새로운 파일 이름
 			newFileName = regRequest.getUserid() + System.currentTimeMillis();
-
 			newFile = new File(saveDirPath, newFileName);
 			
 			/* 파일 저장 */
@@ -51,20 +46,21 @@ public class MemberRegService {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
+		}
+		
+		Member member = regRequest.toMember();
+		if(newFileName != null) {
+			member.setMemberphoto(newFileName);
 		}
 
-
-		Member member = regRequest.toMember();
-		member.setMemberphoto(newFileName);
-		
 		try {
 			// 데이터 베이스 입력
 			dao = template.getMapper(MemberDao.class);
 			result = dao.insertMember(member);
 		} catch (Exception e) {
 			e.printStackTrace();
-
-			// 현재 저장한 파일이 있다면?? -> 삭제
+			// 현재 저장한 파일이 있다면??!! -> 삭제
 			if (newFile != null && newFile.exists()) {
 				newFile.delete();
 			}
@@ -73,4 +69,5 @@ public class MemberRegService {
 
 		return result;
 	}
+
 }

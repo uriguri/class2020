@@ -9,6 +9,7 @@
 <%@ include file="/WEB-INF/views/include/basicset.jsp" %>
 
 <style>
+
 </style>
 </head>
 <body>
@@ -27,8 +28,9 @@
 				<table>
 					<tr>
 						<th><label for="userid">아이디(email)</label></th>
-						<td><input type="email" id="userid" name="userid" value="${member.memberid}" readonly>
-							<input type="text" name="idx" value="${member.idx}"/>
+						<td>
+							<input type="email" id="userid" name="userid" value="${member.memberid}" readonly>
+							<input type="text" name="idx" value="${member.idx}">						
 						</td>
 					</tr>
 					<tr>
@@ -43,10 +45,10 @@
 					<tr>
 						<th><label for="userPhoto">현재 사진</label></th>
 						<td>
-						<img height="40" alt="현재 프로필 사진" src="<c:url value="/fileupload/member/${member.memberphoto}"/>"> 
-						<input type="text" id="oldPhoto" name="oldPhoto" value="${member.memberphoto}">
+							<img height="40" alt="현재 프로필 사진" src="<c:url value="/fileupload/member/${member.memberphoto}" />"> 
+							<input type="text" id="oldPhoto" name="oldPhoto" value="${member.memberphoto}">
 						</td>
-					</tr>
+					</tr>					
 					<tr>
 						<th><label for="userPhoto">사진</label></th>
 						<td><input type="file" id="userPhoto" name="userPhoto">

@@ -8,30 +8,24 @@
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/include/basicset.jsp" %>
 <style>
-	
 	img {
-		width: 100px;
+		width:100px;
 		border-radius: 50%;
 	}
-
 </style>
 </head>
-<body>
+<body >
 	<%@ include file="/WEB-INF/views/include/header.jsp"  %>
-		
 	<%@ include file="/WEB-INF/views/include/nav.jsp"  %>
-	
 	<div class="contents">
-		<h2 class="content_title">My page</h2>
+		<h2 class="content_title">My Page</h2>
 		<hr>
 		<div class="content">
-		My Page 입니다. <br>
+		My Page 입니다.<br>
 		${loginInfo} <br>
-		<img alt="회원사진" src="<c:url value="/fileupload/member/${loginInfo.memberphoto}}"/>"> 
+		<img alt="회원사진" src="<c:url value="/fileupload/member/${loginInfo.memberphoto}"/>"> 
 		</div>
 	</div>
-	
 	<%@ include file="/WEB-INF/views/include/footer.jsp" %>
-
 </body>
 </html>

@@ -24,15 +24,26 @@ public class MemberLoginController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String login(HttpServletRequest request, 
-						HttpServletResponse response,
-						Model model) {
-	
-		model.addAttribute("loginCheck", loginService.login(request, response));
+	public String login(
+			HttpServletRequest request,
+			HttpServletResponse response,
+			Model model
+			) {
 		
+		model.addAttribute("loginCheck", loginService.login(request, response));
 		
 		return "member/loginView";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

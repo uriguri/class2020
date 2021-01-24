@@ -9,17 +9,18 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class AuthCheckIntercepter extends HandlerInterceptorAdapter {
 
 	@Override
-	public boolean preHandle(HttpServletRequest request, 
-				   HttpServletResponse response, 
-				   Object handler)
-				   throws Exception {
+	public boolean preHandle(
+			HttpServletRequest request, 
+			HttpServletResponse response, 
+			Object handler)
+			throws Exception {
 		
 		// 로그인 여부를 확인 하고
 		// 로그인 상태 -> return true
-		// 비 로그인 상태 -> return false, 로그인 페이지로 redirect
+		// 비로그인 상태 -> return false, 로그인 페이지로 redirect
 		
 		HttpSession session = request.getSession(false); 
-		// Session이 null일 때 그대로 유지하기 위해서 false 전달
+		// Session 이 null일때 그대로 유지하기 위해서  false 전달 
 		
 		if(session != null && session.getAttribute("loginInfo") != null) {
 			return true;
@@ -30,6 +31,7 @@ public class AuthCheckIntercepter extends HandlerInterceptorAdapter {
 		return false;
 	}
 
+	
 	
 	
 }
