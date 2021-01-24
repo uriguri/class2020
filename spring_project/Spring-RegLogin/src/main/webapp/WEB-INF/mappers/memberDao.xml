@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.uri.reglogin.member.dao.MemberDao">
+
+	<!-- 회원가입 -->
+	<insert id="insertMember"
+		parameterType="com.uri.reglogin.member.domain.Member">
+		
+		INSERT INTO member
+		
+		<if test="mem_Photo == null">		
+		(mem_Id, mem_Pw, mem_Name)
+		VALUES 
+		(#{mem_Id},#{mem_Pw},#{mem_Name})
+		</if>
+		
+		<if test="mem_Photo != null">
+		(mem_Id, mem_Pw, mem_Name, mem_Photo)
+		VALUES 
+		(#{mem_Id},#{mem_Pw},#{mem_Name},#{mem_Photo})
+		</if>
+		
+	</insert>
+	
+	
+	
+
+</mapper>
