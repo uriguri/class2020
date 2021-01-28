@@ -16,6 +16,7 @@ public class MemberLogoutController {
 		
 		rda.addAttribute("type", "delete");
 		rda.addAttribute("result", "ok");
+		
 		return "redirect:/";
 	}
 
