@@ -75,6 +75,10 @@
 					</tr>
 				</table>
 			</form>
+			<div>
+			ajax로 회원 가입<input type="button" value="회원가입" id="btnReg">
+			</div>
+			
 		</div>
 	</div>
 
@@ -86,6 +90,36 @@
 <script>
 
 	$(document).ready(function(){
+		
+		$('#btnReg').click(function(){
+			
+		var photoFile = $(#'userPhoto');
+		
+		var file1 = photoFile[0].files[0];
+		
+		//console.log(file1);
+		
+		var formData = new FormData();
+		formData.append("userid", $('#userid').val());
+		formData.append("pw", $('#pw').val());
+		formData.append("username", $('#username').val());
+		formData.append("userPhoto", file1);
+			
+		$.ajax({
+			url : '/op/member/reg',
+			type : 'post',
+			data : formData,
+			enctype : 'multipart/from-data',
+			processData : false,
+			contentType : false,
+			cache : false ,
+			success : function(data){
+				console.log(data);
+			}
+		});
+		
+		});
+		
 		
 		
 		$('#regForm').submit(function(){
