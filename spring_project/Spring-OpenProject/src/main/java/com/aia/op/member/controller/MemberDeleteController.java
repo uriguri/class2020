@@ -16,7 +16,7 @@ public class MemberDeleteController {
 	
 	@RequestMapping("/member/delete")
 	public String deleteMember(
-			@RequestParam("idx") int idx,
+			@RequestParam("id x") int idx,
 			Model model
 			) {
 		

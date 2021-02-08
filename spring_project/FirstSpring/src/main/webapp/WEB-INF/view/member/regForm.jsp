@@ -26,6 +26,7 @@
 		이름 <input type="text" name="membername" id="membername"><br>
 		<input type="submit">
 	</form>
+	
 	<script>
 	
 		$('#regForm').submit(function(){
